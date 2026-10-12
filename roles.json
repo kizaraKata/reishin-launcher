@@ -4,174 +4,162 @@
       "id": "1543066704626847873",
       "name": "Full・Access",
       "color": null,
-      "position": 30
+      "position": 28
     },
     {
       "id": "1543066704626847868",
       "name": "👑 • Fondateur",
       "color": "#460e5c",
-      "position": 29
+      "position": 27
     },
     {
       "id": "1556694858494640228",
       "name": "💎  • Co-Fondateur",
       "color": "#9231bb",
-      "position": 28
+      "position": 26
     },
     {
       "id": "1543066704626847867",
       "name": "⭐・Coordinateur",
       "color": "#bd8fd1",
-      "position": 27
+      "position": 25
     },
     {
       "id": "1543066704379379776",
       "name": "・Contributeurs",
       "color": "#11806a",
-      "position": 26
+      "position": 24
     },
     {
       "id": "1543066704555286619",
       "name": "💻  • Développeur",
       "color": "#145885",
-      "position": 25
+      "position": 23
     },
     {
       "id": "1543066704425386008",
       "name": "・Equipe Technique",
       "color": "#6abcd3",
-      "position": 24
+      "position": 22
     },
     {
       "id": "1543066704555286617",
       "name": "🎓  • Responsable",
       "color": "#a84300",
-      "position": 23
+      "position": 21
     },
     {
       "id": "1556699146818425013",
       "name": "🛃  • Responsable Douane",
       "color": "#a84300",
-      "position": 22
+      "position": 20
     },
     {
       "id": "1556697353849671770",
       "name": "👮 • Responsable Staff",
       "color": "#e67e22",
-      "position": 21
+      "position": 19
     },
     {
       "id": "1556697819761344533",
       "name": "🎮  • Responsable RP",
       "color": "#cc9b4b",
-      "position": 20
+      "position": 18
     },
     {
       "id": "1543066704555286615",
       "name": "🔱・Responsable Communauté",
       "color": "#cfac74",
-      "position": 19
+      "position": 17
     },
     {
       "id": "1543066704555286611",
       "name": "・Super Admin",
       "color": "#da0000",
-      "position": 18
+      "position": 16
     },
     {
       "id": "1543066704555286610",
       "name": "🛡️  • Administrateur",
       "color": "#0a5528",
-      "position": 17
+      "position": 15
     },
     {
       "id": "1543071657361416292",
       "name": "Lead Modération",
       "color": "#0028da",
-      "position": 16
+      "position": 14
     },
     {
       "id": "1556701692676935802",
       "name": "🎭・Lead MJ",
       "color": "#073118",
-      "position": 15
+      "position": 13
     },
     {
       "id": "1556702253530751067",
       "name": "🎨・Lead Animation",
       "color": "#9dd100",
-      "position": 14
+      "position": 12
     },
     {
       "id": "1543066704425386013",
       "name": "・Modérateurs",
       "color": "#2b538f",
-      "position": 13
+      "position": 11
     },
     {
       "id": "1556703673235546172",
       "name": "🎲・MJ",
       "color": "#0f804b",
-      "position": 12
+      "position": 10
     },
     {
       "id": "1543066704425386011",
       "name": "🎉・Animateur",
       "color": "#00ff89",
-      "position": 11
+      "position": 9
     },
     {
       "id": "1543066704555286618",
       "name": "💬 • Community Manager",
       "color": "#00ffff",
-      "position": 10
+      "position": 8
     },
     {
       "id": "1543066704379379781",
       "name": "📺 Streamer/euse",
       "color": "#5d00ff",
-      "position": 9
+      "position": 7
     },
     {
       "id": "1556700442635931669",
       "name": "🎬 Content Creator",
       "color": "#bc8fcf",
-      "position": 8
+      "position": 6
     },
     {
       "id": "1556700262813401118",
       "name": "🤝 Partenaire",
       "color": "#c27c0e",
-      "position": 7
+      "position": 5
     },
     {
       "id": "1543066704379379775",
       "name": "・ Membres",
       "color": "#607d8b",
-      "position": 6
+      "position": 4
     },
     {
       "id": "1543066704626847870",
       "name": "🤖・Bot",
       "color": "#0f7cc7",
-      "position": 5
-    },
-    {
-      "id": "1543066704379379778",
-      "name": "・",
-      "color": null,
       "position": 3
-    },
-    {
-      "id": "1559035245972561920",
-      "name": "nouveau rôle",
-      "color": null,
-      "position": 2
     },
     {
       "id": "1559035603251892307",
       "name": "Whitelist",
-      "color": null,
+      "color": "#4cff00",
       "position": 1
     }
   ]
