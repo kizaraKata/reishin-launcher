@@ -1,0 +1,32 @@
+name: Synchro des roles Discord
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  roles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recuperer les roles Discord
+        env:
+          TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          GUILD: "1543066704379379773"
+        run: |
+          node -e '
+          (async () => {
+            const r = await fetch("https://discord.com/api/v10/guilds/" + process.env.GUILD + "/roles", { headers: { Authorization: "Bot " + process.env.TOKEN } });
+            if (!r.ok) { console.error("Erreur Discord " + r.status + " : " + await r.text()); process.exit(1); }
+            const roles = (await r.json()).filter(x => x.id !== process.env.GUILD && !x.managed).sort((a, b) => b.position - a.position)
+              .map(x => ({ id: x.id, name: x.name, color: x.color ? "#" + x.color.toString(16).padStart(6, "0") : null, position: x.position }));
+            require("fs").writeFileSync("roles.json", JSON.stringify({ roles }, null, 2) + "\n");
+            console.log(roles.map(x => x.name).join(", "));
+          })();'
+      - name: Enregistrer
+        run: |
+          git config user.name "reishin-bot"
+          git config user.email "reishin-bot@users.noreply.github.com"
+          git add roles.json
+          git diff --cached --quiet || (git commit -m "Roles Discord" && git push)
