@@ -47,11 +47,33 @@ function tomlArray(txt, key) {
 }
 const readText = (p) => { try { return fs.readFileSync(p, 'utf8'); } catch (_) { return ''; } };
 
+/** Arguments du serveur nanos world en cours (AMP passe --game_mode, --assets… en ligne de commande). */
+function serverArgs() {
+  const out = { packages: [], assets: [] };
+  let pids = [];
+  try { pids = fs.readdirSync('/proc').filter((d) => /^\d+$/.test(d)); } catch (_) { return out; }
+  for (const pid of pids) {
+    let argv;
+    try { argv = fs.readFileSync(`/proc/${pid}/cmdline`, 'utf8').split('\0').filter(Boolean); } catch (_) { continue; }
+    if (!argv.slice(0, 2).some((a) => /NanosWorldServer/i.test(path.basename(a)))) continue;
+    let cwd = '';
+    try { cwd = fs.realpathSync(`/proc/${pid}/cwd`); } catch (_) {}
+    if (cwd && path.resolve(cwd) !== ROOT) continue;
+    const val = (flag) => { const i = argv.indexOf(flag); return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : ''; };
+    const list = (flag) => val(flag).split(/[,\s]+/).filter(Boolean);
+    out.packages.push(val('--game_mode'), val('--map'), val('--loading_screen'), ...list('--packages'));
+    out.assets.push(...list('--assets'));
+  }
+  out.packages = out.packages.filter(Boolean);
+  return out;
+}
+
 /** Packages et asset packs réellement utilisés par le serveur (+ dépendances). */
 function resolveUsed() {
   const cfg = readText(path.join(ROOT, 'Config.toml'));
-  const packages = new Set([tomlString(cfg, 'game_mode'), tomlString(cfg, 'map'), tomlString(cfg, 'loading_screen'), ...tomlArray(cfg, 'packages')].filter(Boolean));
-  const assets = new Set(tomlArray(cfg, 'assets'));
+  const args = serverArgs();
+  const packages = new Set([tomlString(cfg, 'game_mode'), tomlString(cfg, 'map'), tomlString(cfg, 'loading_screen'), ...tomlArray(cfg, 'packages'), ...args.packages].filter(Boolean));
+  const assets = new Set([...tomlArray(cfg, 'assets'), ...args.assets]);
   const queue = [...packages];
   while (queue.length) {
     const p = queue.pop();
