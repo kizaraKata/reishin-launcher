@@ -1,0 +1,95 @@
+{
+  "_aide": "Rôles : du PLUS HAUT au plus bas. Le launcher affiche le premier rôle que le joueur possède. Pour l'ID : Discord > Paramètres du serveur > Rôles > clic droit > Copier l'identifiant.",
+  "roles": [
+    {
+      "id": "1543066704626847868",
+      "name": "Fondateur",
+      "color": "#e3b45a"
+    },
+    {
+      "id": "1559035603251892307",
+      "name": "Whitelisté",
+      "color": "#46d98a"
+    }
+  ],
+  "announcement": "Ouverture de la bêta fermée — rejoins le Discord pour ta whitelist !",
+  "players": "0 / 64",
+  "news": [
+    {
+      "tag": "MapLog",
+      "date": "11/10/2026",
+      "title": "MapLog — Karakura v0.3",
+      "body": "Nouveau quartier commerçant, gare refaite et premiers accès vers le Hueco Mundo."
+    },
+    {
+      "tag": "Staff",
+      "date": "09/10/2026",
+      "title": "Candidatures staff ouvertes",
+      "body": "On recrute modérateurs, animateurs RP et mappeurs. Les candidatures se font sur le site."
+    },
+    {
+      "tag": "RP",
+      "date": "05/10/2026",
+      "title": "Actus RP — Le Gotei en alerte",
+      "body": "Des Hollows inhabituels rôdent autour de Karakura. Les divisions sont mobilisées."
+    }
+  ],
+  "rules": [
+    {
+      "title": "Général",
+      "items": [
+        "Respect obligatoire envers tous les joueurs et le staff.",
+        "Aucun cheat, exploit ou macro.",
+        "Le pseudo doit être un nom RP crédible (Prénom Nom)."
+      ]
+    },
+    {
+      "title": "Roleplay",
+      "items": [
+        "Pas de Powergaming ni de Metagaming.",
+        "Le Free-Kill est interdit : tout combat doit avoir une raison RP.",
+        "La mort RP d'un personnage est définitive après validation staff."
+      ]
+    },
+    {
+      "title": "Pouvoirs",
+      "items": [
+        "Bankai et Resurrección uniquement après validation de la progression.",
+        "Les capacités doivent respecter la fiche personnage validée."
+      ]
+    }
+  ],
+  "lore": [
+    {
+      "title": "Le Reishi",
+      "body": "Tout ce qui existe dans la Soul Society est fait de reishi, les particules spirituelles. Ceux qui savent le maîtriser forgent leur propre destin."
+    },
+    {
+      "title": "Karakura",
+      "body": "Ville du monde des vivants où la frontière entre les mondes est la plus mince. Shinigamis, Quincy et Hollows s'y croisent chaque nuit."
+    },
+    {
+      "title": "Les factions",
+      "body": "Gotei 13, Arrancars, Quincy, Humains éveillés : chaque camp a sa vérité. À toi de choisir la tienne."
+    }
+  ],
+  "patchnotes": [
+    {
+      "version": "0.3.0",
+      "date": "11/10/2026",
+      "changes": [
+        "Ajout du quartier commerçant de Karakura",
+        "Refonte du système de Shunpo",
+        "Correction de la désynchro des zanpakutō"
+      ]
+    },
+    {
+      "version": "0.2.0",
+      "date": "28/09/2026",
+      "changes": [
+        "Création de personnage",
+        "Premier système de factions"
+      ]
+    }
+  ]
+}
