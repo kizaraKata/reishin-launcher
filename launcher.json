@@ -1,11 +1,11 @@
 {
-  "_aide": "Rôles : du PLUS HAUT au plus bas. Le launcher affiche le premier rôle que le joueur possède. Pour l'ID : Discord > Paramètres du serveur > Rôles > clic droit > Copier l'identifiant.",
+  "_aide": "Les rôles viennent automatiquement de Discord (roles.json). ignoredRoles = IDs de rôles à ne jamais afficher. roles = forcer un nom ou une couleur pour un rôle (facultatif).",
+  "ignoredRoles": [
+    "1543066704626847873",
+    "1543066704626847870",
+    "1559035245972561920"
+  ],
   "roles": [
-    {
-      "id": "1543066704626847868",
-      "name": "Fondateur",
-      "color": "#e3b45a"
-    },
     {
       "id": "1559035603251892307",
       "name": "Whitelisté",
