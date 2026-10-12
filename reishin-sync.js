@@ -27,6 +27,7 @@ const crypto = require('crypto');
 const ROOT = path.resolve(process.argv[2] || process.env.NANOS_DIR || '.');
 const PORT = Number(process.argv[3] || process.env.SYNC_PORT || 7780);
 const REFRESH_MS = 60 * 1000;
+const MODE = process.env.SYNC_MODE || 'auto'; // 'auto' = Config.toml (ou tout si vide), 'all' = tout publier
 const CACHE_FILE = path.join(ROOT, '.reishin-sync-cache.json');
 
 if (!fs.existsSync(path.join(ROOT, 'Config.toml'))) {
@@ -57,6 +58,14 @@ function resolveUsed() {
     const pt = readText(path.join(ROOT, 'Packages', p, 'Package.toml'));
     for (const dep of tomlArray(pt, 'packages_requirements')) if (!packages.has(dep)) { packages.add(dep); queue.push(dep); }
     for (const a of tomlArray(pt, 'assets_requirements')) assets.add(a);
+  }
+  // Config.toml vide (ex : serveur géré par AMP qui passe les packages en ligne de commande) :
+  // on publie tous les packages / asset packs présents dans les dossiers du serveur.
+  const listDirs = (d) => { try { return fs.readdirSync(path.join(ROOT, d), { withFileTypes: true }).filter((e) => e.isDirectory() && !e.name.startsWith('.')).map((e) => e.name); } catch (_) { return []; } };
+  const configured = [...packages].filter((p) => fs.existsSync(path.join(ROOT, 'Packages', p))).length + [...assets].filter((a) => fs.existsSync(path.join(ROOT, 'Assets', a))).length;
+  if (MODE === 'all' || configured === 0) {
+    listDirs('Packages').forEach((p) => packages.add(p));
+    listDirs('Assets').forEach((a) => assets.add(a));
   }
   // Asset packs dont le dossier existe sur le serveur (les autres viennent du Vault nanos world)
   return {
