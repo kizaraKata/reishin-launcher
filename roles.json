@@ -145,22 +145,22 @@
       "position": 5
     },
     {
+      "id": "1559035603251892307",
+      "name": "Whitelist",
+      "color": "#4cff00",
+      "position": 4
+    },
+    {
       "id": "1543066704379379775",
       "name": "・ Membres",
       "color": "#607d8b",
-      "position": 4
+      "position": 3
     },
     {
       "id": "1543066704626847870",
       "name": "🤖・Bot",
       "color": "#0f7cc7",
-      "position": 3
-    },
-    {
-      "id": "1559035603251892307",
-      "name": "Whitelist",
-      "color": "#4cff00",
-      "position": 1
+      "position": 2
     }
   ]
 }
